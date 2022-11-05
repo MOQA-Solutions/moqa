@@ -26,12 +26,16 @@ I will list some of its Features : +
 * *Block Someone*
 * *Unblock Someone*
 * *HeartBeat between Client and Server*
+* *Security*
+** *Moqa Server is highly secure* 
+** *It was designed to multi-check each time that the packet came from Molqa*
+** *The Process Actor Exit immediately when it Notes some abnormal behaviour*
+** *However using SSL instead of Plain TCP will be more Secure*
 * ....
 ==== 
 [float]
 = Example
 You can check {example}[here] a very useful example of using Moqa Server in real _3-tiers_ *Web Application*.
-
 
 
 

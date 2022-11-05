@@ -23,6 +23,10 @@ your **Backend Configuration**, this was described in **Moqabase Application**.<
 ```
 rebar3 shell --sname somenode@somehost
 ```
+When **Moqa Application** is running, you can use `moqa_interface.erl` to interact with the Application.<br>
+You can check [here](https://github.com/moqa/blob/master/docs/moqa_interface.asciidoc) a full description of
+`moqa_interface.erl`'s Functions.
+
    
 
 
