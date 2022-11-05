@@ -1,0 +1,19 @@
+[float]
+= get_server_state/0
+[.result]
+====
+* *Args*
+** no arguments
+* *Use Cases*
+** This function returns the *State* of `moqa_server`.
+====
+[float]
+= get_partitions_states/0
+[.result]
+====
+* *Args*
+** no arguments
+* *Use Cases*
+** This function returns the *State* of `partitions_states_server`.
+====
+

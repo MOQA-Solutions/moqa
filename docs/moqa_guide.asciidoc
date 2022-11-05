@@ -1,0 +1,38 @@
+:example: https://github.com/MOQA-Solutions/moqa_example
+[float]
+= What is this
+*Moqa* is a *Full Chat Server* and *Message Broker* that can be used in association with *Moqabase Backend
+Server* as its *Frontend Server*, but it can be used *Anywhere* with just little modification of code. +
+It was designed to be *Small*, *Fast*, and *Safe Packets Broker* for *Chat Applications*. +
+It uses a *Customized* version of *MQTT* lightweight Protocol, to communicate with its *Client Molqa*
+with *QoS = 1*, that means every message is *Acknowledged Once* so it can be delivered *AT LEAST ONCE*. +
+*Moqalib Library* is the only way to *encode* and *decode* Packets between *Moqa* and *Molqa*. +
+[float]
+= Features
+*Moqa Server* can offer all the necessary *Features* that a *Standard Chat Server* offer and plus. +
+I will list some of its Features : +
+[.result]
+====  
+* *Signup for a New Account*
+* *Deactivate his Account*
+* *Connect to his Account for a New Session*
+* *Disconnect from Current Session*
+* *Subscribe to Someone*
+** *Presence/LastSeen for Subscribed Users*
+* *Unsubscribe from Someone that is ALREADY Subscribed To*
+* *Publishing a Message to Someone*
+** *Notification when the Message is Broked to the Server*
+** *Notification when the Message has reached its Destination for Subscribed Users*
+* *Block Someone*
+* *Unblock Someone*
+* *HeartBeat between Client and Server*
+* ....
+==== 
+[float]
+= Example
+You can check {example}[here] a very useful example of using Moqa Server in real _3-tiers_ *Web Application*.
+
+
+
+
+
