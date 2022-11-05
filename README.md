@@ -4,7 +4,7 @@
 **Moqa** is a **Full Chat Server** and **Message Broker** that can offer many **Features**.<br>
 The **Current Server** was designed to work as Frontend Server in association with **Moqabase Backend Server**
 but you can *customize* it to work **Anywhere & Anyway**.<br>
-You can check **All Moqa's Features** [here](https://github.com/MOQA-Solutions/moqa/docs/moqa_guide.asciidoc), for more details and informations you should read **Source Code**.<br>
+You can check **All Moqa's Features** [here](https://github.com/MOQA-Solutions/moqa/blob/master/docs/moqa_guide.asciidoc), for more details and informations you should read **Source Code**.<br>
 
 # Installation
 
