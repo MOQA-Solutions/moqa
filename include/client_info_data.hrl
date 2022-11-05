@@ -32,4 +32,3 @@
 
 -define(BINOUT , list_to_binary("out")).
 
-

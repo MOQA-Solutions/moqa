@@ -79,13 +79,11 @@ init([Parent]) ->
 	end.
 
 
-
 %%=====================================================================================================================================%%
 
 %%							gen_server callback functions		      			    	       %%
 
 %%=====================================================================================================================================%%
-
 
 
 handle_info({'EXIT' , Parent , Reason} , State =#state{parent = Parent}) ->
@@ -117,7 +115,6 @@ handle_info({_From , {'new notification' , {deactivate , Username}}} , State =#s
 	{noreply , NewState};
 
 
-
 handle_info({_From , {'new notification' , {_Reason , Username}}} , State =#state{users_states = UsersStates}) ->
 	LastSeen = erlang:universaltime(),
 	NewUsersStates = UsersStates#{Username => LastSeen},
@@ -143,7 +140,6 @@ handle_info(_Info , State) ->
 	{noreply , State}.
 
 
-
 %%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%%
 
 
@@ -152,7 +148,6 @@ handle_cast(_Cast , State) ->
 
 
 %%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%%
-
 
 
 handle_call(get_state , _From , State) ->
@@ -203,9 +198,4 @@ get_user_state(Username) ->
 		
 notification(Notification) ->
 	erlang:send(?MODULE , Notification).
-
-
-
-
-
 

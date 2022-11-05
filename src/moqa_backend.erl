@@ -57,7 +57,6 @@ send_backend_command({release , _Key} = Command , Pid) ->
 	release_server(Pid , Request).
 
 	
-
 send_backend_command({write , Tuple} = Command , Pid , BackendPartitionsStates) ->
 	Key = element(1 , Tuple),
 	NumberOfBackendPartitions = maps:size(BackendPartitionsStates),
@@ -223,6 +222,4 @@ get_partition_state(Parent , Partition , Server) ->
 			erlang:send(Parent , {partition_state , Partition , undefined})
 	end.
 
-	
-	
 

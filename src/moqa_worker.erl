@@ -97,9 +97,7 @@ not_connected(cast , _Cast , Data) ->
 	{keep_state , Data}.
 
 
-
 %%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%%
-
 
 
 connected(info , {timeout , Timer , {'expired timeout' , 'keep alive'}}  , 
@@ -114,7 +112,6 @@ connected(info , {timeout , _Timer , {'expired timeout' , Username}} ,
 		user = Username
 		}) ->
 	{stop , 'client connexion problem'};
-
 
 
 connected(info , {timeout , Timer , {'expired timeout' , Key}} , 
@@ -183,10 +180,8 @@ connected(cast , _Cast , Data) ->
 	{keep_state , Data};
 
 
-
 connected({call , _From} , _Call , Data) ->
 	{keep_state , Data}.
-
 
 			
 %%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%%
@@ -332,7 +327,6 @@ try_to_connect_user(#connect{
 		broker = Broker
 		},
 	{Reply , NewData};
-
 
 
 try_to_connect_user(_Packet , _Record , Data) ->
@@ -502,7 +496,6 @@ connected_handle_client_packet({_BinPacket , #publish{}} = Packet , Data) ->
 	{keep_state , NewData};
 
 
-
 connected_handle_client_packet({_BinPacket , #pubcomp{}} = Packet , Data) ->
 	NewData = do_pubcomp(Packet , Data),
 	{keep_state , NewData};
@@ -552,7 +545,6 @@ connected_handle_client_packet({_BinPacket , #unsubscribe{}} = Packet ,
 	{keep_state , NewData};
 
 
-
 connected_handle_client_packet({_BinPacket , #block{}} = Packet , 
 	Data =#data{
 		backend_partitions_states = BackendPartitionsStates,
@@ -564,7 +556,6 @@ connected_handle_client_packet({_BinPacket , #block{}} = Packet ,
 	{keep_state , NewData};
 
 
-
 connected_handle_client_packet({_BinPacket , #unblock{}} = Packet , Data) ->
 	ok = do_unblock(Packet , Data),
 	{keep_state , Data};
@@ -574,7 +565,6 @@ connected_handle_client_packet({_BinPacket , #unblock{}} = Packet , Data) ->
 connected_handle_client_packet({_BinPacket , #ping{}} = Packet , Data) ->
 	ok = do_ping(Packet , Data),
 	{keep_state , Data};
-
 
 
 connected_handle_client_packet({_BinPacket , 
@@ -609,7 +599,6 @@ do_deactivate({ {_BinPacket , #deactivate{} = MoqaData} , { Subscribers , Reques
 	NewData.
 
 
-
 -spec do_disconnect({nonempty_binary() , #disconnect{}} , #data{}) -> #data{}.
 do_disconnect({_BinPacket , #disconnect{} = MoqaData} , 
 	Data =#data{
@@ -623,7 +612,6 @@ do_disconnect({_BinPacket , #disconnect{} = MoqaData} ,
 	NewData = init_data(Data),
 	ok = send_ack(MoqaData , Socket),
 	NewData.
-
 
 
 -spec do_publish({nonempty_binary() , #publish{}} , #data{}) -> #data{}.
@@ -873,7 +861,6 @@ do_unblock({_BinPacket , #unblock{
 	ok.
 
 
-
 -spec do_ping({nonempty_binary() , #ping{}} , #data{}) -> ok.
 do_ping({_BinPacket , #ping{} = MoqaData} , 
 	#data{
@@ -1005,7 +992,6 @@ connected_handle_server_notification(_From , {subscription_request , User} ,
 	gen_tcp:send(Socket , ClientInfo),
 	NewData = Data#data{subscriptions_queue = NewSubscriptionsQueue},
 	NewData;
-
 
 
 connected_handle_server_notification(From , {subscription_accepted , User} , 
@@ -1263,6 +1249,4 @@ dequeue_and_send_ack_to_server({Key , {_BinPacket , MoqaData}} = OnlineAck , Dat
 	end.
 
 
-
-			
 

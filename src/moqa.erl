@@ -122,7 +122,6 @@ update_record_field({OP , black_list} , OPUsername ,
 	{Username , Password , Roster , update_field(OP , OPUsername , BlackList) , PacketsQueue , SubscriptionsQueue , UnterminatedOperation};
 
 
-
 update_record_field({OP , packets_queue} , OPPacket , 
 	{_Partition , Username , Password , Roster , BlackList , PacketsQueue , SubscriptionsQueue , UnterminatedOperation}) ->
 	{Username , Password , Roster , BlackList , update_field(OP , OPPacket , PacketsQueue) , SubscriptionsQueue , UnterminatedOperation};
@@ -136,7 +135,6 @@ update_record_field({OP , subscriptions_queue} , OPRequest ,
 update_record_field({OP , unterminated_operation} , OPOperation , 
 	{_Partition , Username , Password , Roster , BlackList , PacketsQueue , SubscriptionsQueue , _UnterminatedOperation}) ->
 	{Username , Password , Roster , BlackList , PacketsQueue , SubscriptionsQueue , update_field(OP , OPOperation)}.
-
 
 
 update_field(new , NewValue) ->
@@ -182,7 +180,5 @@ get_subscriptions_requests(#data{
 				}
 		) ->
 	maps:keys(SubscriptionsQueue).
-
-
 
 

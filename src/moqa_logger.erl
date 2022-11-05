@@ -70,4 +70,3 @@ init() ->
 	logger:add_handler(debug_logging_handler , logger_std_h , Config2),
 	ok.
 
-

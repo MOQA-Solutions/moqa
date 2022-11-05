@@ -38,7 +38,3 @@ get_partitions_states() ->
 	partitions_states_server:get_state().
 
 
-
-
-
-
